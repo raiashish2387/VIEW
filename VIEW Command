@@ -1,0 +1,17 @@
+
+create table hospital_table
+(
+ Patient_id integer,
+ patient_name varchar(30),
+ billing_address string,
+ diagnosis varchar,
+ treatment varchar,
+ cost number(10,2)
+);
+
+create view doctor_view as
+       select patient_id, patient_name, diagnosis, treatment from hospital_table;
+       
+create view acountant_view as
+       select patient_id, patient_name, treatment, cost from hospital_table;
+       
